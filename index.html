@@ -15,7 +15,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">Meu Portfólio</span>
+                <span class="logo-text">Portfólio</span>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Início</a>
@@ -450,18 +450,32 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form action="https://formsubmit.co/davimustafa125@gmail.com" method="POST">
+                        <!-- Honeypot anti-spam -->
+                        <input type="text" name="_honey" style="display:none">
+                        <!-- Desativa captcha do FormSubmit -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <!-- Assunto do e-mail recebido -->
+                        <input type="hidden" name="_subject" value="🚀 Nova oportunidade - Contato do Portfólio - Davi Mustafa">
+                        <!-- Página de agradecimento após envio -->
+                        <input type="hidden" name="_next" value="https://davidevelop.github.io/Portf-lio-Davi-Mustafa/">
+                        <!-- Template personalizado do email -->
+                        <input type="hidden" name="_template" value="table">
+
                         <div class="form-group">
-                            <input type="text" placeholder="Seu Nome" required>
+                            <input type="text" name="name" placeholder="Seu Nome" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Seu Email" required>
+                            <input type="email" name="email" placeholder="Seu Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Assunto" required>
+                            <input type="text" name="company" placeholder="Empresa (opcional)">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                            <input type="text" name="subject" placeholder="Assunto" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
                     </form>
