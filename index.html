@@ -450,17 +450,19 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="https://formsubmit.co/davimustafa125@gmail.com" method="POST">
+                    <form action="https://formsubmit.co/davimustafa125@gmail.com" method="POST" target="_blank">
                         <!-- Honeypot anti-spam -->
                         <input type="text" name="_honey" style="display:none">
                         <!-- Desativa captcha do FormSubmit -->
                         <input type="hidden" name="_captcha" value="false">
                         <!-- Assunto do e-mail recebido -->
-                        <input type="hidden" name="_subject" value="🚀 Nova oportunidade - Contato do Portfólio - Davi Mustafa">
-                        <!-- Página de agradecimento após envio -->
-                        <input type="hidden" name="_next" value="https://davidevelop.github.io/Portf-lio-Davi-Mustafa/">
+                        <input type="hidden" name="_subject" value="🚀 RECRUTADOR - Nova oportunidade no Portfólio - Davi Mustafa">
+                        <!-- Autoresposta -->
+                        <input type="hidden" name="_autoresponse" value="Obrigado pelo contato! Retornarei em breve. - Davi Mustafa">
                         <!-- Template personalizado do email -->
                         <input type="hidden" name="_template" value="table">
+                        <!-- URL de confirmação -->
+                        <input type="hidden" name="_url" value="https://davidevelop.github.io/Portf-lio-Davi-Mustafa/#contact">
 
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Seu Nome" required>
@@ -501,5 +503,20 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Script para melhorar experiência do formulário -->
+    <script>
+        // Adiciona feedback visual ao enviar formulário
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            // Mostra mensagem de confirmação
+            setTimeout(function() {
+                alert('Mensagem enviada com sucesso! Obrigado pelo contato.');
+            }, 500);
+        });
+    </script>
 </body>
 </html>
