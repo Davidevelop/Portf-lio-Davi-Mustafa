@@ -765,6 +765,11 @@ body::before {
     gap: 8px;
     height: 100px;
     margin-bottom: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .chart-container {
+    opacity: 0;
 }
 
 .chart-bar {
@@ -823,6 +828,11 @@ body::before {
     justify-content: center;
     gap: 15px;
     margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .workflow-container {
+    opacity: 0;
 }
 
 .workflow-step {
@@ -880,7 +890,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -898,6 +908,12 @@ body::before {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-tech {
+    opacity: 1;
 }
 
 .project-tech span {
