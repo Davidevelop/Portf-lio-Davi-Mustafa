@@ -451,26 +451,26 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="https://formspree.io/f/xpwzgbkz" method="POST">
-                        <input type="hidden" name="_subject" value="🚀 Nova oportunidade - Portfólio Davi Mustafa">
-                        
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Seu Nome" required>
+                            <input type="text" id="nome" placeholder="Seu Nome" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Seu Email" required>
+                            <input type="email" id="email" placeholder="Seu Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="company" placeholder="Empresa (opcional)">
+                            <input type="text" id="empresa" placeholder="Empresa (opcional)">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" placeholder="Assunto" required>
+                            <input type="text" id="assunto" placeholder="Assunto" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
+                            <textarea id="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        <button type="submit" class="btn btn-primary">Enviar para Davi Mustafa</button>
                     </form>
+                    
+                    <div id="resultado" style="margin-top: 20px; padding: 15px; border-radius: 8px; display: none;"></div>
                 </div>
             </div>
         </div>
@@ -494,12 +494,53 @@
 
     <script src="script.js"></script>
     
-    <!-- Script simples para feedback visual -->
+    <!-- Script DEFINITIVO - Envia direto para o Gmail -->
     <script>
-        document.querySelector('form').addEventListener('submit', function() {
-            const submitBtn = this.querySelector('button[type="submit"]');
-            submitBtn.innerHTML = 'Enviando...';
-            submitBtn.disabled = true;
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coleta os dados
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const empresa = document.getElementById('empresa').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            // Monta o corpo do email
+            const corpoEmail = `
+NOVO CONTATO DO PORTFÓLIO!
+
+Nome: ${nome}
+Email: ${email}
+Empresa: ${empresa || 'Não informado'}
+Assunto: ${assunto}
+
+Mensagem:
+${mensagem}
+
+---
+Enviado através do portfólio: https://davidevelop.github.io/Portf-lio-Davi-Mustafa/
+            `.trim();
+            
+            // Cria o link mailto
+            const mailtoLink = `mailto:davimustafa125@gmail.com?subject=🚀 CONTATO PORTFÓLIO - ${assunto}&body=${encodeURIComponent(corpoEmail)}`;
+            
+            // Abre o cliente de email
+            window.open(mailtoLink);
+            
+            // Mostra confirmação
+            const resultado = document.getElementById('resultado');
+            resultado.style.display = 'block';
+            resultado.style.backgroundColor = '#10b981';
+            resultado.style.color = 'white';
+            resultado.innerHTML = `
+                <strong>✅ Sucesso!</strong><br>
+                Cliente de email aberto com sua mensagem.<br>
+                Complete o envio no seu aplicativo de email para que chegue no Gmail do Davi Mustafa.
+            `;
+            
+            // Limpa o formulário
+            this.reset();
         });
     </script>
 </body>
