@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -450,20 +451,9 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form action="https://formsubmit.co/davimustafa125@gmail.com" method="POST" target="_blank">
-                        <!-- Honeypot anti-spam -->
-                        <input type="text" name="_honey" style="display:none">
-                        <!-- Desativa captcha do FormSubmit -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <!-- Assunto do e-mail recebido -->
-                        <input type="hidden" name="_subject" value="🚀 RECRUTADOR - Nova oportunidade no Portfólio - Davi Mustafa">
-                        <!-- Autoresposta -->
-                        <input type="hidden" name="_autoresponse" value="Obrigado pelo contato! Retornarei em breve. - Davi Mustafa">
-                        <!-- Template personalizado do email -->
-                        <input type="hidden" name="_template" value="table">
-                        <!-- URL de confirmação -->
-                        <input type="hidden" name="_url" value="https://davidevelop.github.io/Portf-lio-Davi-Mustafa/#contact">
-
+                    <form action="https://formspree.io/f/xpwzgbkz" method="POST">
+                        <input type="hidden" name="_subject" value="🚀 Nova oportunidade - Portfólio Davi Mustafa">
+                        
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Seu Nome" required>
                         </div>
@@ -504,18 +494,12 @@
 
     <script src="script.js"></script>
     
-    <!-- Script para melhorar experiência do formulário -->
+    <!-- Script simples para feedback visual -->
     <script>
-        // Adiciona feedback visual ao enviar formulário
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.querySelector('form').addEventListener('submit', function() {
             const submitBtn = this.querySelector('button[type="submit"]');
             submitBtn.innerHTML = 'Enviando...';
             submitBtn.disabled = true;
-            
-            // Mostra mensagem de confirmação
-            setTimeout(function() {
-                alert('Mensagem enviada com sucesso! Obrigado pelo contato.');
-            }, 500);
         });
     </script>
 </body>
