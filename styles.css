@@ -1165,7 +1165,7 @@ body::before {
         width: 100%;
         left: 0 !important;
         padding-left: 3rem;
-        padding-right: 0;
+        padding-right: 1rem;
     }
     
     .timeline-marker {
@@ -1181,9 +1181,10 @@ body::before {
     }
     
     .timeline-content {
-        max-width: 100%;
-        width: 100%;
+        max-width: calc(100vw - 6rem);
+        width: calc(100vw - 6rem);
         margin-right: 0;
+        box-sizing: border-box;
     }
     
     .contact-content {
