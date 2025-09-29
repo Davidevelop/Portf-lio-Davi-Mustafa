@@ -1187,6 +1187,24 @@ body::before {
         box-sizing: border-box;
     }
     
+    .timeline-stats {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .timeline-stat {
+        flex: 1;
+        min-width: 0;
+        max-width: 33%;
+    }
+    
+    .timeline-stat .stat-label {
+        font-size: 0.7rem;
+        line-height: 1.2;
+        word-break: break-word;
+        text-align: center;
+    }
+    
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
