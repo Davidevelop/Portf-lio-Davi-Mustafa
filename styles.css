@@ -224,9 +224,12 @@ body::before {
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: inline-block;
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
 }
 
 .btn-primary {
@@ -238,8 +241,8 @@ body::before {
     background: transparent;
     color: white;
     border-color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary {
@@ -251,7 +254,8 @@ body::before {
 .btn-secondary:hover {
     background: white;
     color: var(--primary-color);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
 }
 
 .btn-outline {
@@ -260,6 +264,7 @@ body::before {
     border: 2px solid var(--primary-color);
     position: relative;
     overflow: hidden;
+    will-change: transform;
 }
 
 .btn-outline::before {
@@ -270,14 +275,15 @@ body::before {
     width: 100%;
     height: 100%;
     background: var(--gradient-primary);
-    transition: left 0.3s ease;
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: -1;
 }
 
 .btn-outline:hover {
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+    border-color: rgba(139, 92, 246, 0.8);
 }
 
 .btn-outline:hover::before {
@@ -286,11 +292,11 @@ body::before {
 
 .btn-outline i {
     margin-right: 0.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .btn-outline:hover i {
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1.1);
 }
 
 .btn-dashboard {
