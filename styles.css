@@ -425,6 +425,65 @@ body::before {
 
 /* ======================================== */
 
+/* ========================================
+   MEDIA QUERIES - DESABILITA EFEITOS HOVER NO MOBILE
+======================================== */
+
+/* Para dispositivos móveis e tablets */
+@media (max-width: 1024px), (hover: none) {
+    
+    /* Desabilita todos os efeitos hover do Hero no mobile */
+    .hero-hover-container:hover .hero-title-effect,
+    .hero-hover-container:hover .gradient-hover,
+    .hero-hover-container:hover .subtitle-hover,
+    .hero-hover-container:hover .description-hover,
+    .hero-hover-container:hover .buttons-hover-container {
+        transform: none !important;
+        filter: none !important;
+        animation: none !important;
+        background: initial !important;
+        background-size: initial !important;
+        -webkit-background-clip: initial !important;
+        -webkit-text-fill-color: initial !important;
+        background-clip: initial !important;
+        text-shadow: none !important;
+        color: inherit !important;
+        transition: none !important;
+    }
+    
+    /* Restaura cores originais no mobile */
+    .gradient-hover {
+        background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+    }
+    
+    .subtitle-hover {
+        color: #e0e7ff !important;
+    }
+    
+    .description-hover {
+        color: #c7d2fe !important;
+    }
+    
+    /* Desabilita animação do scroll indicator */
+    .hero:hover .scroll-indicator {
+        animation: none !important;
+    }
+    
+    /* Remove todas as transições de hover no mobile */
+    .hero-title-effect,
+    .gradient-hover,
+    .subtitle-hover,
+    .description-hover,
+    .buttons-hover-container {
+        transition: none !important;
+    }
+}
+
+/* ======================================== */
+
 .hero-stats {
     display: flex;
     gap: 2rem;
